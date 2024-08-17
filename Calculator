@@ -203,7 +203,7 @@ int main()
                 }
                 cout<<"The value is "<<r<<endl;
             }
-            while(l<=0){
+            else if(l<=0){
                 cout<<"The value of logarithmatic function does not exist"<<endl;
                 cout<<"Please enter a positive integer"<<endl;
             }
