@@ -1,0 +1,217 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"For basic operation press 1"<<endl;
+    cout<<"For square root  press 2"<<endl;
+    cout<<"For quadratic equation press 3"<<endl;
+    cout<<"For  trignometric function press 4"<<endl;
+    cout<<"For log function press 5"<<endl;
+    int h;
+    cout<<"Enter the value to start working with the calculator ";
+    cin>>h;
+    while(2>1){
+    switch(h){
+        case 1:{int x;
+    cout<<"For addition type 1"<<endl;
+    cout<<"For multiplication type 2"<<endl;
+    cout<<"For subtraction type 3"<<endl;
+    cout<<"For division type 4"<<endl;
+        int a,b;
+        cin>>x;
+        cout<<"Enter the values of a and b"<<endl;
+        cin>>a>>b;
+        switch(x){
+            case 1:cout<<"The sum is "<<a+b<<endl;
+                   break;
+            case 2:cout<<"The product is "<<a*b<<endl;
+                   break;
+            case 3:cout<<"The difference is "<<a-b<<endl;
+                   break;
+            case 4:cout<<"The division of two numbers is "<<a/b<<endl;
+                   break;
+        }
+        break;}
+        case 2:{
+            int n;
+   cout<<"enter the value of n "<<endl;
+   cin>>n;
+   if(n>0){
+   double x;
+   x=0.00001;
+   for(double i=0.00002;i*i<n;i+=0.00001){
+      x=x+0.00001;
+   }
+   cout<<"The answer is "<<x<<endl;
+   }
+   else if(n<0){
+       while(n<0){
+       cout<<"Square root is not defined."<<endl;
+       cout<<"Please enter a positive integer"<<endl;
+       cin>>n;
+      }
+    }
+    else if(n==0){
+        cout<<"The answer is 0."<<endl;
+    }
+        }
+        break;
+        case 3:{
+            cout<<"The  general form of quadratic is ax^2+bx+c"<<endl;
+            cout<<"Enter the value of a,b,c"<<endl;
+            int a,b,c;
+            cin>>a>>b>>c;
+            if(a!=0){
+                int d= b*b-4*a*c;
+                if(d>0){
+                double x;
+                x=0.00001;
+                for(double i=0.00002;i*i<d;i+=0.00001){
+                 x=x+0.00001;
+                }
+                    double answer1=-(b+x)/(2*a);
+                    double answer2=(-b+x)/(2*a);
+                    cout<<"The roots are real and distinct and are equal to "<<answer1<<" "<<answer2<<endl;
+                }
+                else if(d==0){
+                    double q=(-b/(2*a));
+                    cout<<"The roots are equal and equal to "<<q<<endl;
+                }
+                else if(d<0){
+                    cout<<"The roots are not real"<<endl;
+                }
+            }
+            if(a==0){
+                double w=(-c/b);
+                cout<<"Since a is 0 then it is a linear equation and x is equal to "<<w<<endl;
+            }
+        }
+        break;
+        case 4:{
+            double ang;
+    cout<<"If you want to enter the angle in degree in degree press 1 or press 2 to enter in radians "<<endl;
+    int d;
+    cin>>d;
+    switch(d){
+        case 1:double x;
+        cout<<"Enter the value of degree"<<endl;
+        cin>>x;
+        ang=(x*3.1415920)/180;
+        break;
+        case 2:cout<<"Enter the value of angle in radian"<<endl;
+        cin>>ang;
+        break;
+    }
+    while(ang>6.283185){
+         ang-=6.283185;
+    }
+    cout<<"For sin press 1,for cos press 2, for tan press 3, for cot press 4, for sec press 5, for cosec press 6 "<<endl;
+    int w;
+    cin>>w;
+    double z;
+    double m=0;
+    double n=0;
+    int i=1;
+    for( i=1;i<=10;i++){
+        long int fac=1;
+        double y=1;
+        for(int j=1;j<=(2*i-1);j++){
+            fac=fac*j;
+            y=y*ang;
+            z=(y/fac);}
+            if(i%2==1){
+                m=m+z;
+            }
+            else if(i%2==0){
+                n=n+z;
+            
+        }
+        
+    }
+    double sine=m-n;
+    double e;
+    double r=0;
+    double k=0;
+    for(int t=1;t<=10;t++){
+        long int l=1;
+        double coang=1;
+        for(int y=1;y<=2*t;y++){
+            l=l*y;
+            coang=coang*ang;
+        }
+        if(t%2==0){
+            r=r+(coang/l);
+        }
+        else if(t%2==1){
+            k=k+(coang/l);
+        } }
+        double u=r-k+1;
+    switch(w){
+        case 1:cout<<"The value is "<<sine<<endl;
+               break;
+        case 2:cout<<"The value is "<<u<<endl;
+              break;
+        case 3:cout<<"The value is "<<sine/u<<endl;
+               break;
+        case 4:cout<<"The value is "<<u/sine<<endl;
+               break;
+        case 5:cout<<"The value is "<<1/u<<endl;
+               break;
+        case 6:cout<<"the value is "<<1/sine<<endl;
+               break;
+    }
+            
+        
+        }
+        break;
+        case 5:{
+            cout<<"The general form of logrithmatic function is y=lnx "<<endl;
+            cout<<"Enter the value of x :";
+            double l;
+            cin>>l;
+            double r;
+            if(l>=1){
+                for(r=0.0001; ;r+=0.0001){
+                long int u=1;
+                double s=1;
+                double t=0;
+                for(int p=1;p<=10;p++){
+                    u=u*p;
+                    s=s*r;
+                    t=t+(s/u);}
+                    if(t>=(l-1)){
+                        break;
+                    }
+            
+            }   
+                
+            cout<<"The value is "<<r-0.0001<<endl;}
+            else if(l<1 && l>0 ){
+                double r;
+                for(r=0.5; ;r-=0.0001){
+                    long int u=1;
+                    double s=1;
+                    double t=0;
+                    for(int p=1;p<=10;p++){
+                    u=u*p;
+                    s=s*r;
+                    t=t+(s/u);}
+                    if(t<=(l-1)){
+                        break;
+                    }
+                }
+                cout<<"The value is "<<r<<endl;
+            }
+            while(l<=0){
+                cout<<"The value of logarithmatic function does not exist"<<endl;
+                cout<<"Please enter a positive integer"<<endl;
+            }
+            
+        }
+        
+        break;
+    }
+}
+    return 0;
+}
